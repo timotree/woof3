@@ -536,7 +536,7 @@ def main():
         # Port
         elif option == '-p':
             try:
-                if 0 <= (port := int(val)) <= 65535:
+                if not (0 <= (port := int(val)) <= 65535):
                     raise ValueError
             except ValueError:
                 usage(
